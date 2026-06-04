@@ -21,7 +21,7 @@ export default function RecipesFormScreen({ route, navigation }) {
       } else {
         recipes.push(newrecipe);
       }
-      await AsyncStorage.setItem("recipes", JSON.stringify(recipes));
+      await AsyncStorage.setItem("customrecipes", JSON.stringify(recipes));
       onrecipeEdited(newrecipe);
       navigation.goBack();
     } catch (error) {
