@@ -59,7 +59,7 @@ export default function FavoriteScreen() {
         </Text>
       </View>
       <FlatList data={favoriteRecipesList} renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate("RecipeDetail", { recipeId: item.recipeId })} style={styles.cardContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate("RecipeDetail", item)} style={styles.cardContainer}>
           <Image source={{ uri: item.recipeImage }} style={styles.recipeImage} />
           <Text style={styles.recipeTitle}>{item.recipeName.length > 20 ? `${item.recipeName.substring(0, 20)}...` : item.recipeName}</Text>
         </TouchableOpacity>

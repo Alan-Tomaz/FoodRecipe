@@ -29,7 +29,7 @@ const ArticleCard = ({ item, index, navigation }) => {
     <View
       style={[styles.cardContainer, { paddingLeft: 20, paddingRight: 15 }]} testID="articleDisplay"
     >
-      <TouchableOpacity onPress={() => navigation.navigate("RecipeDetail", { recipeId: item.recipeId })}>
+      <TouchableOpacity onPress={() => navigation.navigate("RecipeDetail", item)}>
         <Image source={{ uri: item.recipeImage }} style={styles.articleImage} resizeMode="cover" />
         <Text style={styles.articleText}>{item.recipeName}</Text>
         <Text style={styles.articleDescription}>{item.cookingDescription}</Text>
