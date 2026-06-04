@@ -8,7 +8,15 @@ const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-   
+    toggleFavorite: (state, action) => {
+      const recipeId = action.payload;
+      const isFavorite = state.favoriterecipes.includes(recipeId);
+      if (isFavorite) {
+        state.favoriterecipes = state.favoriterecipes.filter((id) => id !== recipeId);
+      } else {
+        state.favoriterecipes.push(recipeId);
+      }
+    }
   },
 });
 
